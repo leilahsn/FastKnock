@@ -5,7 +5,7 @@
 
 
 from collections import defaultdict
-import cobra.test
+import cobra.io
 import cobra.core.reaction
 
 

@@ -3,7 +3,7 @@
             all of coKnockout reactions are identified.
 """
 
-import cobra.test
+import cobra.io
 import time
 import Gene_Rule as GR
 import Clustering_Reactions as CR

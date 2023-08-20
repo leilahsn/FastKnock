@@ -5,7 +5,7 @@
 
 
 
-import cobra.test
+import cobra.io
 import time
 import numpy as np
 
@@ -38,9 +38,12 @@ def essential_reaction(model):
         solutionKO_i  = model.optimize()
         if (solutionKO_i.objective_value < 0.01) or (np.isnan(solutionKO_i.objective_value)) :
             essential_rxn.append(i.id)
-            
-        model.reactions[model.reactions.index(i)].lower_bound = lb
-        model.reactions[model.reactions.index(i)].upper_bound = ub        
+
+        try: 
+            model.reactions[model.reactions.index(i)].lower_bound = lb
+            model.reactions[model.reactions.index(i)].upper_bound = ub
+        except:
+            print(i.id)
             
     return essential_rxn
 
@@ -124,5 +127,3 @@ def identifying_eliminate_list(model):
         
     return eliminate_list
 
-if __name__ =='__main__':
-    main()

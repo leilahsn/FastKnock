@@ -6,7 +6,7 @@
 
 
 
-import cobra.test
+import cobra.io
 import time
 import Gene_Rule as GR
 
