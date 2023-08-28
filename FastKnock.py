@@ -6,7 +6,7 @@
 
 from Node import Node
 import PreProcessing as PreProc
-import cobra.test
+import cobra.io
 from identifyTargetSpace import identifyTargetSpace
 from constructSubTree import constructSubTree
 from traverseTree import procTraverseTree
@@ -33,12 +33,12 @@ def model_preparation (model_name):
       
     #
     # As mentioned in the third step of README.md file, the medium culture should be specified in the following lines.
-    model.reactions[model.reactions.index("EX_o2(e)")].lower_bound = 0
-    model.reactions[model.reactions.index("EX_o2(e)")].upper_bound = 0
+    # model.reactions[model.reactions.index("EX_o2(e)")].lower_bound = 0
+    # model.reactions[model.reactions.index("EX_o2(e)")].upper_bound = 0
 
-    model.reactions[model.reactions.index("EX_glc(e)")].lower_bound = -10
-    model.reactions[model.reactions.index("EX_glc(e)")].upper_bound = 0
-    #
+    # model.reactions[model.reactions.index("EX_glc(e)")].lower_bound = -10
+    # model.reactions[model.reactions.index("EX_glc(e)")].upper_bound = 0
+    # #
     #
       
 
@@ -98,7 +98,8 @@ def main():
 
     #  
     #As mentioned in the second step of README.md file, the name of model should be replaced in the next line.
-    model, Removable, coKnockoutRxns = model_preparation ("iJR904.mat")
+    x="Community1.mat"
+    model, Removable, coKnockoutRxns = model_preparation (x)
 
     root = Node (0,[] , [] , [],0,0)
     root = identifyTargetSpace(root, model, Removable,coKnockoutRxns)
