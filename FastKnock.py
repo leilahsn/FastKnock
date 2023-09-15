@@ -83,13 +83,15 @@ def writeInFile (level, solution):
 
 def main():
     
-    target_level = input("Enter your desired level (maximum number of simultaneous reaction knockout ):  ")
+    target_level = 1
+    # input("Enter your desired level (maximum number of simultaneous reaction knockout ):  ")
 
-    guaranteed_flag = 0
-    if ( int(input("If you want to use FastKnock in guaranteed mood, press 1 othrwise press 0: ")) == 1 ):
-        guaranteed_flag = 1
+    guaranteed_flag = 1
+    # if ( int(input("If you want to use FastKnock in guaranteed mood, press 1 othrwise press 0: ")) == 1 ):
+    # guaranteed_flag = 1
 
-    num_of_processes = input("Enter number of proccessor cores: ")
+    num_of_processes = 4
+    # input("Enter number of proccessor cores: ")
 
     queue = construct_data_structure (target_level)
     checked = construct_data_structure (target_level)

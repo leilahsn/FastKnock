@@ -8,8 +8,8 @@ def isGuaranteedSolution(X, model):
 
     #
     # As mentioned in the 4th step of README.md file, the desired chemical and biomass (and their threshold) reactions should be defined in the following lines.
-    chemical = "EX_succ(e)"
-    biomass = "BiomassEcoli"
+    chemical = 'EX_succ_e[u]'
+    biomass = "ecoli_BIOMASS_Ec_iML1515_core_75p37M"
     Th_chemical = 0.64
     Th_biomass = 0.01
     #
